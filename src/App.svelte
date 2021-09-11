@@ -139,13 +139,19 @@
     }
   }
 
+  .some-img-here {
+    background-image: url('/img/cristina-gottardi-VtRfw-dGPzg-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
   p > a {
     @apply text-green-400
   }
 
   p > a:hover {
     @apply text-green-500 pb-px border-b border-green-500;
-    background-image: url(/img/squiggle-link.svg);
+    background-image: url('/img/squiggle-link.svg');
     background-position: 0 100%;
     background-size: auto 36px;
     background-repeat: repeat;

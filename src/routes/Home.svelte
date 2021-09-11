@@ -6,11 +6,14 @@
   const greeting = hours > 13 ? hours > 18 ? 'Good evening' : 'Good afternoon' : 'Good morning';
 </script>
 
-<div class="some-img-here">
-  <div class="container py-8">
+<div class="some-img-here relative">
+  <div class="container p-16">
     <div class="h1">{greeting}, {$user.firstName}!</div>
-    <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+    <p class="text-white">Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
   </div>
+  <span class="absolute right-px bottom-px text-sm text-gray-400">
+    Photo by <a href="https://unsplash.com/@cristina_gottardi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cristina Gottardi</a> on <a href="https://unsplash.com/collections/67943953/sand-dune-field?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </span>
 </div>
 
 <div class="container">
