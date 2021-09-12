@@ -7,7 +7,7 @@
 </script>
 
 <div class="some-img-here relative">
-  <div class="container p-16">
+  <div class="container px-12 py-24">
     <div class="h1">{greeting}, {$user.firstName}!</div>
     <p class="text-white">Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
   </div>
