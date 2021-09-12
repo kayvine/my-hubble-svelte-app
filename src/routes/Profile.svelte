@@ -15,28 +15,28 @@
   let accountPassword;
   // let optIn1;
 
-  let formInvalid = false;
+  // let formInvalid = false;
 
   function disableOthers(event) {
     console.log(event.detail.active);
     disabled = !disabled;
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event, component) {
     console.log(event);
-    console.log(event.target.passwordCheck);
+    console.log('password check', event.target.passwordCheck);
     Object.keys(event.target).forEach(console.log);
 
     const inValid = event.target.passwordCheck && event.target.passwordCheck !== $user.password;
     if (inValid) {
-      formInvalid = true;
+      // formInvalid = true;
       return;
     }
 
     user.set({
       ...$user,
-      firstName: event.target.firstName ? event.target.firstName.value : $user.firstName,
-      lastName: event.target.lastName ? event.target.lastName.value : $user.lastName,
+      ...(event.target.firstName && {firstName: event.target.firstName.value}),
+      ...(event.target.lastName && {lastName: event.target.lastName.value}),
       ...(event.target.email && {email: event.target.email.value}),
       ...(event.target.password && {password: event.target.password.value}),
       street: event.target.street ? event.target.street.value : $user.street,
@@ -48,7 +48,7 @@
       telephone: event.target.telephone ? event.target.telephone.value : $user.telephone,
       contactEmail: event.target.contactEmail ? event.target.contactEmail.value : $user.contactEmail,
     });
-    // account.show();
+    component.show();
     console.log('submitted!');
   }
 
@@ -56,6 +56,16 @@
     const input = event.target;
     console.log(input);
     const validityState = input.validity;
+
+    // if password field, check if correct
+    console.log(event);
+    console.log(event.target.passwordCheck);
+
+    if (input.passwordCheck && input.passwordCheck !== $user.password) {
+      validityState.customError = true;
+    }
+
+    console.log(validityState.customError);
 
     if (validityState.valueMissing) {
       input.setCustomValidity('You gotta fill this out, yo!');
@@ -89,7 +99,7 @@
       >
         <form
             class="flex flex-wrap w-full md:w-4/5 mx-auto"
-            on:submit|preventDefault={handleSubmit}
+            on:submit|preventDefault={(e) => handleSubmit(e, accountName)}
             on:invalid={validate}
         >
           <div class="w-1/2 px-2 mb-4">
@@ -115,14 +125,18 @@
           {disabled}
           on:showDetail={disableOthers}
       >
-        <form class="flex flex-wrap w-full md:w-4/5 mx-auto" on:submit|preventDefault={handleSubmit}>
+        <form
+            class="flex flex-wrap w-full md:w-4/5 mx-auto"
+            on:submit|preventDefault={e => handleSubmit(e, accountEmail)}
+            on:invalid={validate}
+        >
           <div class="w-1/2 px-2 mb-4">
             <label class="block text-grey-darker text-sm font-bold mb-2" for="email">Email address</label>
-            <input class="form-input" id="email" type="text" placeholder={$user.email}>
+            <input class="form-input" id="email" type="text" placeholder={$user.email} required>
           </div>
           <div class="w-1/2 mb-4">
             <label class="block text-grey-darker text-sm font-bold mb-2" for="passwordCheck">Password</label>
-            <input class="form-input" id="passwordCheck" type="password" placeholder="*************">
+            <input class="form-input" id="passwordCheck" type="password" placeholder="***********" required>
             <p class="text-red-400 text-xs italic">Please enter your password.</p>
           </div>
           <div class="px-2 ml-auto">
@@ -216,9 +230,9 @@
   <div class="w-full md:w-3/4">
     <div class="card bg-white">
       <div class="flex items-start relative min-h-[6rem] px-8 py-3 border-b border-gray-200">
-          <span class="text-gray-400 material-icons-outlined md-40 my-2 mr-6">drafts</span>
+        <span class="text-gray-400 material-icons-outlined md-40 my-2 mr-6">drafts</span>
         <div class="mr-auto pt-2">
-            <div class="text-gray-500">Some opt-in</div>
+          <div class="text-gray-500">Some opt-in</div>
           <span class="block font-semibold">Nothing here</span>
         </div>
         <span class="w-48 text-sm text-gray-500 mt-2 mr-24">Some description here {$user.optIn1}</span>
