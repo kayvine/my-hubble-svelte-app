@@ -1,6 +1,7 @@
 <script>
   import {link} from 'svelte-spa-router';
-  import {user} from "../stores";
+  import {user} from '../stores';
+  import ActionButton from '../components/ActionButton.svelte';
 
   const hours = new Date().getHours() + 1;
   const greeting = hours > 13 ? hours > 18 ? 'Good evening' : 'Good afternoon' : 'Good morning';
@@ -12,7 +13,9 @@
     <p class="text-white">Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
   </div>
   <span class="absolute right-px bottom-px text-sm text-gray-400">
-    Photo by <a href="https://unsplash.com/@cristina_gottardi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cristina Gottardi</a> on <a href="https://unsplash.com/collections/67943953/sand-dune-field?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    Photo by <a
+      href="https://unsplash.com/@cristina_gottardi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cristina Gottardi</a> on <a
+      href="https://unsplash.com/collections/67943953/sand-dune-field?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   </span>
 </div>
 
@@ -63,15 +66,8 @@
         </div>
       </div>
       <div class="pb-8">
-        <div
-            class="flex items-center bg-white p-6 m-1 border border-gray-200 rounded hover:bg-green-50 hover:border-green-400 cursor-pointer active:mt-px">
-          <span class="material-icons-outlined md-40 text-green-400 mr-3">event_available</span>
-          <div class="mr-auto">
-            <div class="text-lg font-bold uppercase text-gray-500">Contact us</div>
-            <span class="inline-block text-gray-400">Make an appointment</span>
-          </div>
-          <span class="material-icons-outlined md-40 text-green-400">east</span>
-        </div>
+        <ActionButton icon="event_available" title="Contact us" text="Make an appointment"/>
+        <ActionButton icon="text_snippet" title="Doccle" text="View my documents"/>
       </div>
     </div>
   </div>
