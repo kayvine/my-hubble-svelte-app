@@ -83,9 +83,9 @@
   <!-- ACCOUNT -->
   <div class="w-full md:w-1/4">
     <div class="pr-4 pb-4">
-      <div class="text-2xl font-bold text-green-400">Account</div>
-      <hr class="w-12 border-t-2 border-green-400 mt-2">
-      <p class="mt-4">Manage your account details for My Hubble here</p>
+      <div class="text-3xl font-semibold text-green-400">Account</div>
+      <hr class="w-16 border-t-2 border-green-400 my-2">
+      <p class="text-gray-600">Manage your account details for My Hubble here.</p>
     </div>
   </div>
   <div class="w-full md:w-3/4 pb-6">
@@ -162,9 +162,9 @@
 
   <!-- HEALTHCARE DATA 93.10.16-201.81 -->
   <div class="w-full sm:w-1/4 pr-4 pb-4">
-    <div class="text-2xl font-bold text-green-400">Customer data</div>
-    <hr class="w-12 border-t-2 border-green-400 mt-2">
-    <p class="mt-4">Some text here</p>
+    <div class="text-3xl font-semibold text-green-400">Customer data</div>
+    <hr class="w-16 border-t-2 border-green-400 my-2">
+    <p class="text-gray-600">Some text here</p>
   </div>
   <div class="w-full md:w-3/4">
     <div class="card bg-white">
@@ -182,9 +182,9 @@
 
   <!-- ADDRESS - TELEPHONE - EMAIL -->
   <div class="w-full sm:w-1/4 pr-4 pb-4">
-    <div class="text-2xl font-bold text-green-400">Contact details</div>
-    <hr class="w-12 border-t-2 border-green-400 mt-2">
-    <p class="mt-4">Some text here</p>
+    <div class="text-3xl font-semibold text-green-400">Contact details</div>
+    <hr class="w-16 border-t-2 border-green-400 my-2">
+    <p class="text-gray-600">We can contact you with this information.</p>
   </div>
   <div class="w-full md:w-3/4">
     <div class="card bg-white">
@@ -223,9 +223,9 @@
 
   <!-- OPT-INS -->
   <div class="w-full sm:w-1/4 pr-4 pb-4">
-    <div class="text-2xl font-bold text-green-400">Data usage</div>
-    <hr class="w-12 border-t-2 border-green-400 mt-2">
-    <p class="mt-4">Some text here</p>
+    <div class="text-3xl font-semibold text-green-400">Data usage</div>
+    <hr class="w-16 border-t-2 border-green-400 my-2">
+    <p class="text-gray-600">Let us know which information we can send you.</p>
   </div>
   <div class="w-full md:w-3/4">
     <div class="card bg-white">
@@ -243,12 +243,12 @@
 
   <!-- REMOVE ACCOUNT -->
   <div class="w-full sm:w-1/4 pr-4 pb-4">
-    <div class="text-2xl font-bold text-red-400">Remove account</div>
-    <hr class="w-12 border-t-2 border-red-400 mt-2">
-    <p class="mt-4">Only remove your account if you don't want to make use of My HUBBLE in the future.</p>
+    <div class="text-3xl font-semibold text-red-400">Remove account</div>
+    <hr class="w-16 border-t-2 border-red-400 my-2">
+    <p class="text-gray-600">Only remove your account if you don't want to make use of My HUBBLE in the future.</p>
   </div>
   <div class="w-full md:w-3/4">
-    <div class="card bg-white">
+    <div class="card bg-white border-red-400">
       <div class="flex items-start min-h-[6rem] px-8 py-3 border-b border-gray-200">
         <span class="material-icons-outlined md-40 text-gray-400 my-2 mr-6">delete</span>
         <div class="mt-2 mr-auto">
