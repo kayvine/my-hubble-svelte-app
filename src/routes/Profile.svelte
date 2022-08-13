@@ -18,7 +18,7 @@
   // let formInvalid = false;
 
   function disableOthers(event) {
-    console.log(event.detail.active);
+    // console.log(event.detail.active);
     disabled = !disabled;
   }
 

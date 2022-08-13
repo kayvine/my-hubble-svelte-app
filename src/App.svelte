@@ -2,7 +2,7 @@
   import Router, {location, link} from 'svelte-spa-router';
   import routes from './routes';
   import {capitalize} from './utils';
-  import Header from './Header.svelte';
+  import Header from './components/Header.svelte';
 
   let params;
 
@@ -18,6 +18,7 @@
 
 <Header/>
 
+<!-- Breadcrumbs -->
 <div class="bg-transparent">
   <div class="container">
     {#if $location !== '/'}
@@ -36,13 +37,9 @@
   <Router {routes}/>
 </main>
 
-<hr class="w-32 border-green-400 mx-auto mt-6"/>
-<footer class="container flex justify-between p-8 pt-0">
+<footer class="container flex justify-between border-t-4 border-green-400 p-8">
   <span>kayvine 2021</span>
-  <div>
-    Made with svelte
-    <span class="material-icons-outlined md-18 text-blue-500">verified</span>
-  </div>
+  <div class="flex items-center">Made with svelte<span class="material-icons-outlined md-18 text-blue-500 ml-1">verified</span></div>
 </footer>
 
 <style global lang="postcss">
@@ -52,11 +49,15 @@
 
   @layer base {
     h1, .h1 {
-      @apply text-3xl font-bold text-green-400 mb-4;
+      @apply text-3xl font-bold text-green-400 mb-4
     }
 
     h2, .h2 {
       @apply text-3xl font-extrabold text-green-400
+    }
+
+    h3, .h3 {
+      @apply text-lg font-semibold
     }
 
     .material-icons.md-18,
@@ -81,7 +82,6 @@
   }
 
   @layer components {
-
     .btn {
       @apply text-sm font-semibold uppercase py-1 px-2 rounded
     }

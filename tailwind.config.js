@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
-  purge: [
+  content: [
     './src/**/*.{js,svelte}',
   ],
   darkMode: false, // or 'media' or 'class'
@@ -12,7 +12,7 @@ module.exports = {
       // Build your palette here
       transparent: 'transparent',
       current: 'currentColor',
-      gray: colors.trueGray,
+      gray: colors.neutral,
       red: colors.red,
       green: colors.emerald,
       blue: colors.sky,
