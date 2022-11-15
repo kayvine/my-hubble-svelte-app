@@ -161,12 +161,12 @@
   </div>
 
   <!-- HEALTHCARE DATA 93.10.16-201.81 -->
-  <div class="w-full sm:w-1/4 pr-4 pb-4">
+  <div class="w-full md:w-1/4 pr-4 pb-4">
     <div class="text-3xl font-semibold text-green-400">Customer data</div>
     <hr class="w-16 border-t-2 border-green-400 my-2">
     <p class="text-gray-600">Some text here</p>
   </div>
-  <div class="w-full md:w-3/4">
+  <div class="w-full md:w-3/4 pb-6">
     <div class="card bg-white">
       <Option
           icon=""
@@ -181,12 +181,12 @@
   </div>
 
   <!-- ADDRESS - TELEPHONE - EMAIL -->
-  <div class="w-full sm:w-1/4 pr-4 pb-4">
+  <div class="w-full md:w-1/4 pr-4 pb-4">
     <div class="text-3xl font-semibold text-green-400">Contact details</div>
     <hr class="w-16 border-t-2 border-green-400 my-2">
     <p class="text-gray-600">We can contact you with this information.</p>
   </div>
-  <div class="w-full md:w-3/4">
+  <div class="w-full md:w-3/4 pb-6">
     <div class="card bg-white">
       <Option
           icon="home"
@@ -222,12 +222,12 @@
   </div>
 
   <!-- OPT-INS -->
-  <div class="w-full sm:w-1/4 pr-4 pb-4">
+  <div class="w-full md:w-1/4 pr-4 pb-4">
     <div class="text-3xl font-semibold text-green-400">Data usage</div>
     <hr class="w-16 border-t-2 border-green-400 my-2">
     <p class="text-gray-600">Let us know which information we can send you.</p>
   </div>
-  <div class="w-full md:w-3/4">
+  <div class="w-full md:w-3/4 pb-6">
     <div class="card bg-white">
       <div class="flex items-start relative min-h-[6rem] px-8 py-3 border-b border-gray-200">
         <span class="text-gray-400 material-icons-outlined md-40 my-2 mr-6">drafts</span>
@@ -242,7 +242,7 @@
   </div>
 
   <!-- REMOVE ACCOUNT -->
-  <div class="w-full sm:w-1/4 pr-4 pb-4">
+  <div class="w-full md:w-1/4 pr-4 pb-4">
     <div class="text-3xl font-semibold text-red-400">Remove account</div>
     <hr class="w-16 border-t-2 border-red-400 my-2">
     <p class="text-gray-600">Only remove your account if you don't want to make use of My HUBBLE in the future.</p>

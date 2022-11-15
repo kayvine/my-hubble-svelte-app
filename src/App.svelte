@@ -37,9 +37,11 @@
   <Router {routes}/>
 </main>
 
-<footer class="container flex justify-between border-t-4 border-green-400 p-8">
-  <span>kayvine 2021</span>
-  <div class="flex items-center">Made with svelte<span class="material-icons-outlined md-18 text-blue-500 ml-1">verified</span></div>
+<footer class="border-t-4 border-green-400">
+  <div class="container flex justify-between p-8">
+    <span>kayvine 2021</span>
+    <div class="flex items-center">Made with svelte<span class="material-icons-outlined md-18 text-blue-500 ml-1">verified</span></div>
+  </div>
 </footer>
 
 <style global lang="postcss">
@@ -49,7 +51,7 @@
 
   @layer base {
     h1, .h1 {
-      @apply text-3xl font-bold text-green-400 mb-4
+      @apply text-3xl font-bold mb-4
     }
 
     h2, .h2 {
@@ -78,6 +80,11 @@
     .material-icons.md-40,
     .material-icons-outlined.md-40 {
       font-size: 40px;
+    }
+
+    .material-icons.md-72,
+    .material-icons-outlined.md-72 {
+      font-size: 72px;
     }
   }
 

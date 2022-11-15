@@ -6,7 +6,6 @@ module.exports = {
   content: [
     './src/**/*.{js,svelte}',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       // Build your palette here
