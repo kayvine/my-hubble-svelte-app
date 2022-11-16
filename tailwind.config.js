@@ -13,6 +13,7 @@ module.exports = {
       current: 'currentColor',
       gray: colors.neutral,
       red: colors.red,
+      info: colors.green,
       green: colors.emerald,
       blue: colors.sky,
       yellow: colors.amber,
@@ -21,7 +22,7 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: '1rem',
+      padding: '0.625rem',
     },
     screens: {
       ...defaultTheme.screens,
@@ -37,5 +38,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

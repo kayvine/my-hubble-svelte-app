@@ -2,6 +2,7 @@
   import {link} from 'svelte-spa-router';
   import {user} from '../stores';
   import ActionButton from '../components/ActionButton.svelte';
+  import Alert from '../components/Alert.svelte';
   import InfoCard from '../components/InfoCard.svelte';
 
   const hours = new Date().getHours() + 1;
@@ -45,10 +46,18 @@
             <div class="text-2xl font-bold mr-auto">Declarations</div>
             <button on:click={() => alert('TODO')} type="button" class="btn btn-outline">Change</button>
           </div>
-          <div class="flex items-center px-6 md:px-8 py-3">
-            <span class="my-3 mr-auto">223756845</span>
-            <span class="mr-20">21 june 2021</span>
-            <span class="">102 EUR</span>
+          <div class="px-6 md:px-8 py-3">
+            <div class="flex items-center">
+              <span class="my-3 mr-auto">223756845</span>
+              <span class="mr-4 md:mr-20">21 june 2021</span>
+              <span class="">102 EUR</span>
+            </div>
+            <hr/>
+            <div class="flex items-center">
+              <span class="my-3 mr-auto">2325486511</span>
+              <span class="mr-4 md:mr-20">04 march 2021</span>
+              <span class="">184 EUR</span>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +76,7 @@
           </div>
         </div>
       </div>
-      <div class="pb-8">
+      <div class="flex flex-col pb-8">
         <ActionButton icon="event_available" title="Contact us" text="Make an appointment"/>
         <ActionButton icon="text_snippet" title="Doccle" text="View my documents"/>
       </div>
@@ -89,28 +98,22 @@
 
 <div class="container py-8">
   <h2>Links</h2>
-  <div class="grid md:grid-cols-3 md:gap-4 mt-4">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
     <InfoCard>
       <span slot="title">Hello</span>
-      <span>
-        I'm baby occupy artisan williamsburg,
-        edison bulb everyday carry mi taxidermy brooklyn.
-      </span>
+      I'm baby occupy artisan williamsburg,
+      edison bulb everyday carry mi taxidermy brooklyn.
+      Sustainable four loko dreamcatcher cardigan.
     </InfoCard>
     <InfoCard>
-      <span>
-        Direct trade cloud bread hot chicken, kinfolk street art messenger bag hella.
-        Pickled thundercats occupy, chia try-hard letterpress iPhone.
-      </span>
+      Direct trade cloud bread hot chicken, kinfolk street art messenger bag hella.
+      Pickled thundercats everyday, chia try-hard letterpress iPhone.
     </InfoCard>
     <InfoCard>
-      <span>
-        Actually occupy food truck flannel tote bag.
-        Chillwave ready-made raclette gluten-free. Kombucha occupy franzen.
-      </span>
+      Actually occupy food truck flannel tote bag.
+      Chillwave ready-made raclette gluten-free. Kombucha occupy franzen.
     </InfoCard>
     <div class="card bg-white py-24 text-center">Something</div>
-    <div class="card bg-white py-24 text-center">Something</div>
-    <div class="card bg-white py-24 text-center">Something</div>
+    <div class="md:col-span-2 card bg-white py-24 text-center">Something</div>
   </div>
 </div>

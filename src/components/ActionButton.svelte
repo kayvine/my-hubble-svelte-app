@@ -4,7 +4,7 @@
   export let text;
 </script>
 
-<div class="max-w-sm transform active:translate-y-px">
+<div class="transform active:translate-y-px">
   <div class="flex items-center bg-white p-6 m-1 border border-gray-200 rounded hover:bg-green-50 hover:border-green-400 cursor-pointer">
     <span class="material-icons-outlined md-40 text-green-400 mr-3">{icon}</span>
     <div class="mr-auto">
