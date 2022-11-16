@@ -33,10 +33,10 @@
             <div class="text-2xl font-bold mr-auto">Overview</div>
             <button type="button" class="btn btn-outline">Show all</button>
           </div>
-          <div class="flex items-center bg-blue-50 text-blue-400 px-8 py-6 border-l-4 border-blue-400">
-            <span class="material-icons-outlined md-40 my-2 mr-6">info</span>
-            <div class="text-2xl font-bold">This is an info message</div>
-          </div>
+          <Alert severity="info">This is an info message</Alert>
+          <!--<Alert severity="error">This is an error message</Alert>-->
+          <!--<Alert severity="warning">This is an warning message</Alert>-->
+          <!--<Alert severity="success">This is an success message</Alert>-->
         </div>
       </div>
       <div class="pb-8">
