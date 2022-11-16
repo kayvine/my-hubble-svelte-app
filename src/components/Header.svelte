@@ -16,9 +16,9 @@
         <span class="logo font-bold text-3xl tracking-tighter text-green-400">Hubble</span>
       </a>
       <div class="flex items-center text-sm uppercase">
-        <div class="flex items-center cursor-pointer" on:click={() => open = !open}>
+        <div class="group flex items-center cursor-pointer" on:click={() => open = !open} on:keydown={() => open = !open}>
           <span class="material-icons mr-1">{open ? 'close' : 'menu' }</span>
-          <span class="hover:underline">{open ? 'close menu' : 'menu'}</span>
+          <span class="group-hover:underline">{open ? 'close menu' : 'menu'}</span>
         </div>
         <a href="/" class="flex items-center h-6 pl-2 mx-2 border-l border-gray-900 hover:underline">
           <span>nl</span>
@@ -30,15 +30,15 @@
             <div class="px-2">&mdash;</div>
           </div>
         {/if}
-        <div
+        <button
             on:click={logInUser}
-            class="hidden sm:flex items-center h-6 cursor-pointer hover:underline"
+            class="hidden sm:flex items-center h-6 text-sm uppercase hover:underline"
             class:pl-2={!$loggedIn}
             class:border-l={!$loggedIn}
             class:border-gray-900={!$loggedIn}
         >
           <span>{$loggedIn ? 'logout' : 'login'}</span>
-        </div>
+        </button>
       </div>
     </nav>
   </div>

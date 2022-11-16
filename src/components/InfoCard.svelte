@@ -13,6 +13,6 @@
         this fallback content will be rendered when no content is provided, like in the first example
       </slot>
     </span>
-    <a href="/profile" type="button" class="btn btn-outline">Action</a>
+    <a href="/" type="button" class="btn btn-outline">Action</a>
   </div>
 </div>
