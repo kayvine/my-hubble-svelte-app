@@ -1,7 +1,7 @@
 <script>
   import {user, loggedIn} from '../stores';
 
-  let isOpen = true;
+  let isOpen = false;
 
   $: displayName = `${$user.firstName} ${$user.lastName}`;
 
