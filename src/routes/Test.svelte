@@ -1,5 +1,5 @@
 <script>
-  import {location} from 'svelte-spa-router';
+  import { location } from 'svelte-spa-router';
 
   // You need to define the component prop "params"
   export let params = {}

@@ -1,24 +1,30 @@
 <script>
   import {user, loggedIn} from '../stores';
 
-  let displayName = `${$user.firstName} ${$user.lastName}`;
-  let open = false;
+  let isOpen = true;
+
+  $: displayName = `${$user.firstName} ${$user.lastName}`;
 
   function logInUser() {
     loggedIn.set(!$loggedIn);
+  }
+
+  function open() {
+    isOpen = !isOpen;
   }
 </script>
 
 <header class="border-b-4 border-green-400">
   <div class="container">
-    <nav class="flex items-center justify-between h-20">
-      <a href="/" class="inline-block">
+    <nav class="flex items-center justify-between h-16">
+      <a href="/" class="inline-block relative">
+        <span class="absolute top-[-11px] left-2 font-bold tracking-tighter tracking-tighter text-green-300">My</span>
         <span class="logo font-bold text-3xl tracking-tighter text-green-400">Hubble</span>
       </a>
       <div class="flex items-center text-sm uppercase">
-        <div class="group flex items-center cursor-pointer" on:click={() => open = !open} on:keydown={() => open = !open}>
-          <span class="material-icons mr-1">{open ? 'close' : 'menu' }</span>
-          <span class="group-hover:underline">{open ? 'close menu' : 'menu'}</span>
+        <div class="group flex items-center cursor-pointer" on:click={open} on:keydown={open}>
+          <span class="material-icons mr-1">{isOpen ? 'close' : 'menu' }</span>
+          <span class="group-hover:underline">{isOpen ? 'close menu' : 'menu'}</span>
         </div>
         <a href="/" class="flex items-center h-6 pl-2 mx-2 border-l border-gray-900 hover:underline">
           <span>nl</span>
@@ -42,65 +48,79 @@
       </div>
     </nav>
   </div>
-  {#if open}
-    <div class="border-t-4 border-green-400">
-      <div class="container grid md:grid-cols-3 md:gap-4 my-4">
-        <div class="pt-2">
-          <h3>title</h3>
-          <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
+  <div
+      class="menu absolute inset-x-0 container pl-8 bg-white border-t-4 border-green-400 z-20 shadow-[0_8px_24px_0_rgba(0,0,0,0.1)]"
+      class:hidden={!isOpen}
+      aria-hidden={!isOpen}
+      tabindex="-1"
+  >
+    <div class="md:grid md:grid-cols-[--grid-column-menu] md:gap-6">
+      <div class="navigation-list md:py-8 md:pr-4">
+        <div>
+          <h3 class="mb-3">Air plant tote bag</h3>
+          <ul class="flex flex-wrap">
+            <li><a href="/">Some cool link</a></li>
+            <li><a href="/">Thundercats post-ironic blackbird</a></li>
+            <li><a href="/">echo park lumbersexual vape</a></li>
+            <li><a href="/">Viral tofu jean shorts</a></li>
+            <li><a href="/">Gatekeep freegan echo</a></li>
+            <li><a href="/">Venmo scenester distillery</a></li>
           </ul>
         </div>
-        <div class="pt-2">
-          <h3>title</h3>
-          <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-          </ul>
-        </div>
-        <div class="pt-2">
-          <h3>title</h3>
-          <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-          </ul>
-        </div>
-        <div class="pt-2">
-          <h3>title</h3>
-          <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-          </ul>
-        </div>
-        <div class="pt-2">
-          <h3>title</h3>
-          <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
+        <div class="mt-3">
+          <h3 class="mb-3">Bodega boys</h3>
+          <ul class="flex flex-wrap">
+            <li><a href="/">Taiyaki cloud bread</a></li>
+            <li><a href="/">Milkshake street art</a></li>
+            <li><a href="/">Edison bulb unicorn cronut glossier</a></li>
+            <li><a href="/">Cray church-key</a></li>
           </ul>
         </div>
       </div>
+      <div class="navigation-list-extra pt-6 md:py-8 md:px-8">
+        <h3 class="mb-3">Go to ...</h3>
+        <ul>
+          <li><a href="/">Edison bulb copper mug</a></li>
+          <li><a href="/">Photo booth park bespoke</a></li>
+          <li><a href="/">Tote bag intelligentsia pabst tumeric occupy</a></li>
+          <li><a href="/">link</a></li>
+          <li><a href="/">link</a></li>
+          <li><a href="/">link</a></li>
+        </ul>
+      </div>
     </div>
-  {/if}
+  </div>
 </header>
 
 <style>
-  .logo::before {
-    @apply text-base;
-    content: 'MY';
-    position: relative;
-    top: -10px;
-    left: 0;
+  .menu h3 {
+    @apply text-xl font-bold
+  }
+  .navigation-list ul > li {
+    @apply w-1/2
+  }
+  .navigation-list ul > li,
+  .navigation-list-extra ul > li {
+    @apply text-gray-600 mb-1
+  }
+  .menu a:hover {
+    @apply text-green-500 underline
+  }
+  .menu a::after {
+    @apply relative top-1;
+    content: 'chevron_right'; /* arrow_right */
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 </style>

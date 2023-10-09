@@ -1,5 +1,6 @@
 <script>
-  import {user} from '../stores';
+  import { onMount } from 'svelte';
+  import { user } from '../stores';
   import Option from '../components/Option.svelte';
 
   let disabled;
@@ -12,12 +13,14 @@
 
   let accountName;
   let accountEmail;
-  let accountPassword;
+  // let accountPassword;
   // let optIn1;
 
   // let formInvalid = false;
 
-  function disableOthers(event) {
+  onMount(() => window.scrollTo(0, 0));
+
+  function disableOthers() {
     // console.log(event.detail.active);
     disabled = !disabled;
   }
@@ -35,10 +38,10 @@
 
     user.set({
       ...$user,
-      ...(event.target.firstName && {firstName: event.target.firstName.value}),
-      ...(event.target.lastName && {lastName: event.target.lastName.value}),
-      ...(event.target.email && {email: event.target.email.value}),
-      ...(event.target.password && {password: event.target.password.value}),
+      ...(event.target.firstName && { firstName: event.target.firstName.value }),
+      ...(event.target.lastName && { lastName: event.target.lastName.value }),
+      ...(event.target.email && { email: event.target.email.value }),
+      ...(event.target.password && { password: event.target.password.value }),
       street: event.target.street ? event.target.street.value : $user.street,
       number: event.target.number ? event.target.number.value : $user.number,
       bus: event.target.bus ? event.target.bus.value : $user.bus,

@@ -1,6 +1,6 @@
 <script>
-  import {link} from 'svelte-spa-router';
-  import {user} from '../stores';
+  import { link } from 'svelte-spa-router';
+  import { user } from '../stores';
   import ActionButton from '../components/ActionButton.svelte';
   import Alert from '../components/Alert.svelte';
   import InfoCard from '../components/InfoCard.svelte';
@@ -10,12 +10,11 @@
 </script>
 
 <div class="some-img-here relative">
-  <div class="container px-12 py-24">
+  <div class="container px-12 py-12 md:py-24">
     <div class="h1 text-white">{greeting}, {$user.firstName}!</div>
-    <p class="text-white">Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build
-      Svelte apps.</p>
+    <p class="text-white">Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
   </div>
-  <span class="absolute right-px bottom-px text-sm text-gray-400">
+  <span class="absolute right-px bottom-px text-[11px] text-gray-400">
     Photo by <a
       href="https://unsplash.com/@cristina_gottardi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cristina Gottardi</a> on <a
       href="https://unsplash.com/collections/67943953/sand-dune-field?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -98,9 +97,9 @@
 
 <div class="container py-8">
   <h2>Links</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-    <InfoCard>
-      <span slot="title">Hello</span>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6 mt-4">
+    <InfoCard image="/img/cristina-gottardi-VtRfw-dGPzg-unsplash.jpg">
+      <h3 slot="title">Hello</h3>
       I'm baby occupy artisan williamsburg,
       edison bulb everyday carry mi taxidermy brooklyn.
       Sustainable four loko dreamcatcher cardigan.
@@ -113,7 +112,31 @@
       Actually occupy food truck flannel tote bag.
       Chillwave ready-made raclette gluten-free. Kombucha occupy franzen.
     </InfoCard>
-    <div class="card bg-white py-24 text-center">Something</div>
-    <div class="md:col-span-2 card bg-white py-24 text-center">Something</div>
+    <div class="card bg-white pt-12 px-8">
+      <ul class="list-disc list-outside pl-6 mb-12">
+        <li>Something</li>
+        <li>Something else</li>
+        <li>More things</li>
+      </ul>
+    </div>
+    <div class="some-other-img-here md:col-span-2 card bg-white h-64 pt-24 px-8 text-right">
+      <h3 class="h3">Something here</h3>
+      <p class="mt-1 text-sm leading-6">I'm baby artisan bulb everyday carry taxidermy brooklyn.</p>
+    </div>
   </div>
 </div>
+
+<style>
+  .some-img-here, .some-other-img-here {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .some-img-here {
+    background-image: url('/img/cristina-gottardi-VtRfw-dGPzg-unsplash.jpg');
+  }
+
+  .some-other-img-here {
+    background-image: url('/img/joanna-kosinska-I3adKpDNAjM-unsplash.jpg');
+  }
+</style>

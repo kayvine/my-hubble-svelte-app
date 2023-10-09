@@ -1,5 +1,4 @@
 const colors = require('tailwindcss/colors');
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
@@ -12,11 +11,11 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       gray: colors.neutral,
-      red: colors.red,
-      info: colors.green,
       green: colors.emerald,
-      blue: colors.sky,
-      yellow: colors.amber,
+      error: colors.red,
+      warning: colors.amber,
+      info: colors.sky,
+      success: colors.green,
       black: colors.black,
       white: colors.white,
     },
@@ -25,8 +24,10 @@ module.exports = {
       padding: '0.625rem',
     },
     screens: {
-      ...defaultTheme.screens,
-      '2xl': '1280px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
     },
     extend: {
       colors: {
@@ -38,7 +39,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
+  plugins: [],
 }

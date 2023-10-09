@@ -1,7 +1,7 @@
 <script>
-  import Router, {location, link} from 'svelte-spa-router';
+  import Router, { location, link } from 'svelte-spa-router';
   import routes from './routes';
-  import {capitalize} from './utils';
+  import { capitalize } from './utils';
   import Header from './components/Header.svelte';
 
   let params;
@@ -39,7 +39,7 @@
 
 <footer class="border-t-4 border-green-400">
   <div class="container flex justify-between p-8">
-    <span>kayvine 2021</span>
+    <span>kayvine 2022</span>
     <div class="flex items-center">Made with svelte<span class="material-icons-outlined md-18 text-blue-500 ml-1">verified</span></div>
   </div>
 </footer>
@@ -50,6 +50,11 @@
   @tailwind utilities;
 
   @layer base {
+    :root {
+      /*--shadow-menu: 0 8px 24px 0 rgba(0, 0, 0, 0.16);*/
+      --grid-column-menu: 3fr minmax(200px, 2fr);
+    }
+
     h1, .h1 {
       @apply text-3xl font-bold mb-4
     }
@@ -94,18 +99,18 @@
     }
 
     .btn-outline {
-      @apply bg-transparent text-gray-400 border-2 border-gray-200 hover:text-green-400 hover:border-green-400
+      @apply bg-transparent text-gray-400 border-2 border-gray-200 hover:text-green-400 hover:border-green-300
     }
 
     .card {
       @apply m-1 border border-gray-200 rounded
     }
 
-    .card :first-child {
+    .card > :first-child {
       @apply rounded-t
     }
 
-    .card :last-child {
+    .card > :last-child {
       @apply rounded-b
     }
 
@@ -144,12 +149,6 @@
       @apply transition;
       left: calc(100% - 1.5rem);
     }
-  }
-
-  .some-img-here {
-    background-image: url('/img/cristina-gottardi-VtRfw-dGPzg-unsplash.jpg');
-    background-position: center;
-    background-size: cover;
   }
 
   p > a {

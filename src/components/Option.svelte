@@ -1,10 +1,10 @@
 <script>
-  import {createEventDispatcher} from 'svelte';
+  import { createEventDispatcher } from 'svelte';
 
-  export let title;
+  export let title = undefined;
   export let data;
   export let icon;
-  export let description;
+  export let description = undefined;
   export let disabled = false;
 
   const dispatch = createEventDispatcher();
@@ -15,7 +15,7 @@
 
   export function show() {
     active = !active;
-    dispatch('showDetail', {active});
+    dispatch('showDetail', { active });
   }
 </script>
 

@@ -1,12 +1,17 @@
 <script>
+  /** @type {'success'|'info'|'warning'|'error'} */
   export let severity = 'success';
+
+  $: if (!['success','info','warning','error'].includes(severity)) {
+    throw new Error('Invalid severity on \'Alert\' component');
+  }
 
   function severityClasses() {
     return {
-      error: 'bg-red-50 text-red-400 border-red-400',
-      warning: 'bg-yellow-50 text-yellow-400 border-yellow-400',
-      info: 'bg-blue-50 text-blue-400 border-blue-400',
-      success: 'bg-info-50 text-info-400 border-info-400',
+      error: 'bg-error-50 text-error-400 border-error-400',
+      warning: 'bg-warning-50 text-warning-400 border-warning-400',
+      info: 'bg-info-50 text-info-400 border-info-400',
+      success: 'bg-success-50 text-success-400 border-success-400',
     }[severity]
   }
 
