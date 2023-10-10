@@ -55,7 +55,7 @@
       tabindex="-1"
   >
     <div class="md:grid md:grid-cols-[--grid-column-menu] md:gap-6">
-      <div class="navigation-list md:py-8 md:pr-4">
+      <div class="navigation-list pt-6 md:py-8 md:pr-4">
         <div>
           <h3 class="mb-3">Air plant tote bag</h3>
           <ul class="flex flex-wrap">
@@ -77,15 +77,14 @@
           </ul>
         </div>
       </div>
-      <div class="navigation-list-extra pt-6 md:py-8 md:px-8">
+      <div class="navigation-list-extra py-6 md:py-8 md:px-8">
         <h3 class="mb-3">Go to ...</h3>
         <ul>
           <li><a href="/">Edison bulb copper mug</a></li>
           <li><a href="/">Photo booth park bespoke</a></li>
-          <li><a href="/">Tote bag intelligentsia pabst tumeric occupy</a></li>
-          <li><a href="/">link</a></li>
-          <li><a href="/">link</a></li>
-          <li><a href="/">link</a></li>
+          <li><a href="/">Tote bag intelligentsia pabst</a></li>
+          <li><a href="/">Tumeric occupy</a></li>
+          <li><a href="/">Imagined hardly coffee</a></li>
         </ul>
       </div>
     </div>
@@ -97,7 +96,7 @@
     @apply text-xl font-bold
   }
   .navigation-list ul > li {
-    @apply w-1/2
+    @apply w-full lg:w-1/2
   }
   .navigation-list ul > li,
   .navigation-list-extra ul > li {
