@@ -9,8 +9,8 @@
   const greeting = hours > 13 ? hours > 18 ? 'Good evening' : 'Good afternoon' : 'Good morning';
 </script>
 
-<div class="some-img-here relative">
-  <div class="container px-12 py-12 md:py-24">
+<div class="relative bg-cover bg-center" style="background-image: url('/img/cristina-gottardi-VtRfw-dGPzg-unsplash.jpg')">
+  <div class="container px-12 py-16 lg:py-32">
     <div class="h1 text-white">{greeting}, {$user.firstName}!</div>
     <p class="text-white">Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
   </div>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="container">
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr,330px] gap-4">
+  <div class="grid lg:grid-cols-[1fr,330px] lg:gap-4">
 
     <div class="this_is_the_main_column">
       <div class="pb-8">
@@ -119,24 +119,9 @@
         <li>More things</li>
       </ul>
     </div>
-    <div class="some-other-img-here md:col-span-2 card bg-white h-64 pt-24 px-8 text-right">
+    <div class="md:col-span-2 card bg-white bg-cover bg-center h-64 pt-24 px-8 text-right" style="background-image: url('/img/joanna-kosinska-I3adKpDNAjM-unsplash.jpg')">
       <h3 class="h3">Something here</h3>
       <p class="mt-1 text-sm leading-6">I'm baby artisan bulb everyday carry taxidermy brooklyn.</p>
     </div>
   </div>
 </div>
-
-<style>
-  .some-img-here, .some-other-img-here {
-    background-position: center;
-    background-size: cover;
-  }
-
-  .some-img-here {
-    background-image: url('/img/cristina-gottardi-VtRfw-dGPzg-unsplash.jpg');
-  }
-
-  .some-other-img-here {
-    background-image: url('/img/joanna-kosinska-I3adKpDNAjM-unsplash.jpg');
-  }
-</style>
