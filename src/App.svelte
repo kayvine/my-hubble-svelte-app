@@ -1,37 +1,10 @@
 <script>
-  import Router, { location, link } from 'svelte-spa-router';
+  import Router from 'svelte-spa-router';
   import routes from './routes';
-  import { capitalize } from './utils';
   import Header from './components/Header.svelte';
-
-  let params;
-
-  function getParams(location) {
-    let params = location.split('/');
-    // remove the first item (home)
-    params.shift();
-    return params;
-  }
-
-  $: params = getParams($location);
 </script>
 
 <Header/>
-
-<!-- Breadcrumbs -->
-<div class="bg-transparent">
-  <div class="container">
-    {#if $location !== '/'}
-      <div class="flex items-center py-4">
-        <a href="/" use:link class="pr-1">Home</a>
-        {#each params as param}
-          <span class="material-icons-outlined text-gray-400">chevron_right</span>
-          <span class="px-1">{capitalize(param)}</span>
-        {/each}
-      </div>
-    {/if}
-  </div>
-</div>
 
 <main class="bg-gray-100">
   <Router {routes}/>

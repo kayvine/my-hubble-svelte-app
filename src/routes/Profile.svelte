@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { user } from '../stores';
+  import Breadcrumbs from '../components/Breadcrumbs.svelte';
   import Option from '../components/Option.svelte';
 
   let disabled;
@@ -81,6 +82,8 @@
     input.reportValidity();
   }
 </script>
+
+<Breadcrumbs/>
 
 <div class="flex flex-wrap container py-8">
   <!-- ACCOUNT -->
