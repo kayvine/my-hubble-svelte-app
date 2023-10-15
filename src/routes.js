@@ -5,6 +5,7 @@ import NotFound from './routes/NotFound.svelte';
 
 export default {
   '/profile': Profile,
+  '/contact': Test,
   // Using named parameters, with last being optional
   '/author/:first/:last?': Test,
   '/': Home,

@@ -1,5 +1,6 @@
 <script>
-  import {user, loggedIn} from '../stores';
+  import { push } from 'svelte-spa-router';
+  import { user, loggedIn } from '../stores';
 
   let isOpen = false;
 
@@ -12,9 +13,14 @@
   function open() {
     isOpen = !isOpen;
   }
+
+  function goTo(url) {
+    isOpen = false;
+    push(url);
+  }
 </script>
 
-<header class="border-b-4 border-green-400">
+<header class="sticky top-0 md:static bg-white border-b-4 border-green-400 z-[1]">
   <div class="container">
     <nav class="flex items-center justify-between h-16">
       <a href="/" class="inline-block relative">
@@ -49,12 +55,12 @@
     </nav>
   </div>
   <div
-      class="menu absolute inset-x-0 container pl-8 bg-white border-t-4 border-green-400 z-20 shadow-[0_8px_24px_0_rgba(0,0,0,0.1)]"
+      class="absolute inset-x-0 container pl-8 bg-white border-t-4 border-green-400 z-20 shadow-[0_8px_24px_0_rgba(0,0,0,0.1)]"
       class:hidden={!isOpen}
       aria-hidden={!isOpen}
       tabindex="-1"
   >
-    <div class="md:grid md:grid-cols-[--grid-column-menu] md:gap-6">
+    <div class="menu md:grid md:grid-cols-[--grid-column-menu] md:gap-6">
       <div class="navigation-list pt-6 md:py-8 md:pr-4">
         <div>
           <h3 class="mb-3">Air plant tote bag</h3>
@@ -64,7 +70,6 @@
             <li><a href="/">echo park lumbersexual vape</a></li>
             <li><a href="/">Viral tofu jean shorts</a></li>
             <li><a href="/">Gatekeep freegan echo</a></li>
-            <li><a href="/">Venmo scenester distillery</a></li>
           </ul>
         </div>
         <div class="mt-3">
@@ -73,7 +78,7 @@
             <li><a href="/">Taiyaki cloud bread</a></li>
             <li><a href="/">Milkshake street art</a></li>
             <li><a href="/">Edison bulb unicorn cronut glossier</a></li>
-            <li><a href="/">Cray church-key</a></li>
+            <li><a href="/">Venmo scenester distillery</a></li>
           </ul>
         </div>
       </div>
@@ -88,6 +93,17 @@
         </ul>
       </div>
     </div>
+
+    <div class="sm:hidden -ml-8 -mr-2 pb-6">
+      <button
+          class="flex items-center w-full bg-white px-8 py-6 border-y border-solid border-gray-200"
+          on:click={() => goTo('/contact')}
+      >
+        <span class="material-icons-outlined md-24 text-green-400 mr-3">event_available</span>
+        <span class="mr-auto">Make an appointment</span>
+        <span class="material-icons-outlined md-24 text-green-400">chevron_right</span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -100,7 +116,7 @@
   }
   .navigation-list ul > li,
   .navigation-list-extra ul > li {
-    @apply text-gray-600 mb-1
+    @apply text-gray-600 mb-2
   }
   .menu a:hover {
     @apply text-green-500 underline
