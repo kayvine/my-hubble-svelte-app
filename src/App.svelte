@@ -104,22 +104,20 @@
     }
 
     input[type="checkbox"].switch {
-      @apply relative w-12 h-6 bg-gray-300 text-2xl appearance-none rounded-full cursor-pointer;
-      content: 'UIT';
+      @apply relative w-12 h-6 bg-gray-300 text-2xl appearance-none rounded-full cursor-pointer transition-colors duration-300 ease-linear;
     }
 
     input[type="checkbox"].switch::after {
-      @apply absolute w-6 h-6 bg-white rounded-full scale-75;
+      @apply absolute left-0 w-6 h-6 bg-white rounded-full scale-75 duration-200 ease-linear;
       content: '';
+      transition-property: left;
     }
 
     input[type="checkbox"].switch:checked {
       @apply bg-green-400;
-      content: 'AAN';
     }
 
     input[type="checkbox"].switch:checked::after {
-      @apply transition;
       left: calc(100% - 1.5rem);
     }
   }

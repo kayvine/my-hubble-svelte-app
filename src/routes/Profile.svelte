@@ -143,7 +143,7 @@
           <div class="w-1/2 mb-4">
             <label class="block text-grey-darker text-sm font-bold mb-2" for="passwordCheck">Password</label>
             <input class="form-input" id="passwordCheck" type="password" placeholder="***********" required>
-            <p class="text-red-400 text-xs italic">Please enter your password.</p>
+            <p class="text-error-400 text-xs italic">Please enter your password.</p>
           </div>
           <div class="px-2 ml-auto">
             <button class="form-btn secondary" type="button" on:click={() => accountEmail.show()}>Cancel</button>
@@ -235,27 +235,27 @@
   </div>
   <div class="w-full md:w-3/4 pb-6">
     <div class="card bg-white">
-      <div class="flex items-start relative min-h-[6rem] px-8 py-3 border-b border-gray-200">
+      <div class="flex items-start relative min-h-[6rem] px-6 md:px-8 py-3 border-b border-gray-200">
         <span class="text-gray-400 material-icons-outlined md-40 my-2 mr-6">drafts</span>
         <div class="mr-auto pt-2">
           <div class="text-gray-500">Some opt-in</div>
           <span class="block font-semibold">Nothing here</span>
         </div>
-        <span class="w-48 text-sm text-gray-500 mt-2 mr-24">Some description here {$user.optIn1}</span>
-        <input type="checkbox" bind:checked={$user.optIn1} class="switch">
+        <span class="hidden md:block w-48 text-sm text-gray-500 mt-2 mr-24">Some description here {$user.optIn1}</span>
+        <input type="checkbox" bind:checked={$user.optIn1} class="switch mt-3">
       </div>
     </div>
   </div>
 
   <!-- REMOVE ACCOUNT -->
   <div class="w-full md:w-1/4 pr-4 pb-4">
-    <div class="text-3xl font-semibold text-red-400">Remove account</div>
-    <hr class="w-16 border-t-2 border-red-400 my-2">
+    <div class="text-3xl font-semibold text-error-400">Remove account</div>
+    <hr class="w-16 border-t-2 border-error-400 my-2">
     <p class="text-gray-600">Only remove your account if you don't want to make use of My HUBBLE in the future.</p>
   </div>
   <div class="w-full md:w-3/4">
-    <div class="card bg-white border-red-400">
-      <div class="flex items-start min-h-[6rem] px-8 py-3 border-b border-gray-200">
+    <div class="card bg-white border-error-400">
+      <div class="flex items-start min-h-[6rem] px-6 md:px-8 py-3 border-b border-gray-200">
         <span class="material-icons-outlined md-40 text-gray-400 my-2 mr-6">delete</span>
         <div class="mt-2 mr-auto">
           <div class="font-semibold">Remove account</div>
@@ -266,7 +266,7 @@
         <button
             on:click={() => alert('Your account is removed')}
             type="button"
-            class="font-semibold uppercase py-1 px-2 mt-3 hover:text-red-400"
+            class="font-semibold uppercase py-1 px-2 mt-3 hover:text-error-400"
         >
           Delete
         </button>

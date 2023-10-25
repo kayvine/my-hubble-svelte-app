@@ -112,7 +112,7 @@
       Actually occupy food truck flannel tote bag.
       Chillwave ready-made raclette gluten-free. Kombucha occupy franzen.
     </InfoCard>
-    <div class="card bg-white pt-12 px-8">
+    <div class="card bg-white px-6 md:px-8 pt-12">
       <ul class="list-disc list-outside pl-6 mb-12">
         <li>Something</li>
         <li>Something else</li>
