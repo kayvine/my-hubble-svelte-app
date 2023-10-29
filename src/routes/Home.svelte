@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <div class="this_is_the_sidebar">
+    <div class="@container this_is_the_sidebar">
       <div class="pb-8">
         <div class="card">
           <div class="flex items-center bg-gray-50 px-6 md:px-8 py-3 border-b border-gray-200">
@@ -75,9 +75,10 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col pb-8">
+      <div class="grid grid-cols-1 @2xl:grid-cols-2 pb-8">
         <ActionButton icon="event_available" title="Contact us" text="Make an appointment"/>
         <ActionButton icon="text_snippet" title="Doccle" text="View my documents"/>
+        <ActionButton icon="smart_toy" title="Click here" text="It's a surprise"/>
       </div>
     </div>
   </div>

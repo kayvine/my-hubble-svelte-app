@@ -12,8 +12,8 @@
 
 <footer class="border-t-4 border-green-400">
   <div class="container flex justify-between p-8">
-    <span>kayvine 2022</span>
-    <div class="flex items-center">Made with svelte<span class="material-icons-outlined md-18 text-blue-500 ml-1">verified</span></div>
+    <span>kayvine {new Date().getFullYear()}</span>
+    <div class="flex items-center">Made with svelte<span class="material-icons-outlined md-18 text-[#1DA1F2] ml-1">verified</span></div>
   </div>
 </footer>
 
